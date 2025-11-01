@@ -1,0 +1,192 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>节省成本，我的静态博客 | 山高万仞  ⛰️  只登一步</title>
+<link rel="shortcut icon" href="https://PotatoNoodle.github.io/favicon.ico?v=1761994795298">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://PotatoNoodle.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="节省成本，我的静态博客 | 山高万仞  ⛰️  只登一步 - Atom Feed" href="https://PotatoNoodle.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="在很多年前我就跟风搭建了一个博客（WP），后来域名到期，也没什么内容可输出，就关闭了。
+接着一时兴起，用更轻量的typecho搭建了一个博客，关闭原因同上。
+后来又在家里的nas上运行了一个博客，用CF的tunnel发布到互联网上，但经常被..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://PotatoNoodle.github.io">
+  <img class="avatar" src="https://PotatoNoodle.github.io/images/avatar.png?v=1761994795298" alt="">
+  </a>
+  <h1 class="site-title">
+    山高万仞  ⛰️  只登一步
+  </h1>
+  <p class="site-description">
+    让时间停留在此刻，THE WORLD ! 
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              节省成本，我的静态博客
+            </h2>
+            <div class="post-info">
+              <span>
+                2025-10-26
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>在很多年前我就跟风搭建了一个博客（WP），后来域名到期，也没什么内容可输出，就关闭了。<br>
+接着一时兴起，用更轻量的typecho搭建了一个博客，关闭原因同上。<br>
+后来又在家里的nas上运行了一个博客，用CF的tunnel发布到互联网上，但经常被“上市”（好，把他们全部上市！），很扫兴，于是关闭了。<br>
+现在用pages搭建了静态博客，直接解决了服务器的烦恼和开销，只剩下我的域名费用了。</p>
+<hr>
+<p>简单整理下思路。</p>
+<p>搭建博客省略，照猫画虎就是。</p>
+<p>为了方便的整理照片获得当下路径内所有文件名，并且把它加上markdown的图片语法，顺带还整了个脚本，直接形成列表并匹配markdown，留在这里方便以后使用。</p>
+<pre><code>import os
+folder = os.getcwd()  
+files = sorted(os.listdir(folder))
+
+
+exts = ('.jpg', '.jpeg', '.png')
+for f in files:
+    if f.lower().endswith(exts):
+    print(f&quot;![]({os.path.join(folder, f)})&quot;)
+</code></pre>
+<p>哈哈，然后发现每次要同步几百兆，这可不行，而且有以下几个问题：<br>
+1.本地编辑好后，图片太大，同步上去太慢。<br>
+2.大量占用仓库空间，微软可能封我号。<br>
+3.偶发性阻断导致可能无妨正常访问。<br>
+于是我换个思路解决了图床问题。</p>
+<p>把自己家里路由器上的webdav（网盘）当作图床，把自己需要上传的照片，放进了一个特定的共享的文件夹，再用markdown的&quot;*![]&quot;来显示图片，效果如下。</p>
+<figure data-type="image" tabindex="1"><img src="https://dav6.iamwv.com:55555/sd/SSEVYjm3/20251031/DSC00644%405136x3424.jpg" alt="" loading="lazy"></figure>
+<p>就是这么个思路，域名付费（应该还有5年），服务器成本0，图床自建（家里的路由器），实现了我更便宜的博客自由！</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://PotatoNoodle.github.io/zOq1g1DoBm/">
+              <h3 class="post-title">
+                2025年10月25日 河边 第一次拍摄
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://PotatoNoodle.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
